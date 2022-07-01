@@ -5,12 +5,12 @@ using namespace std;
 class Player {
     private:
         char name[100];
-        vector<Card> cards;
+        vector<Card> hand;
         int sum, cash, bet, index;
         int win;
 
     public:
-        Player(char pname[100]): cards(5) {
+        Player(char pname[100]): hand(5) {
             strcpy(name,pname);
             index = sum = win = bet = 0;
             cash = 5000;
@@ -20,6 +20,9 @@ class Player {
             if(sum > 21) {
                 win = 2;
             }
+            if(sum == 21) {
+                win = 3;
+            }
             return win;
         }
 
@@ -28,8 +31,8 @@ class Player {
         }
 
         bool addCard() {
-            cards[index].dealCard();
-            sum += cards[index].getNumber();
+            hand[index].dealCard();
+            sum += hand[index].getNumber();
             index++;
 
             if(checkSum() == 2){

@@ -1,4 +1,5 @@
 #include <iostream>
+using namespace std;
 
 class Card {
     private:
@@ -6,6 +7,10 @@ class Card {
         char ace;
 
     public:
+        void setNumber(int x) {
+            number = x;
+        }
+
         int getNumber() {
             return number;
         }
@@ -25,3 +30,20 @@ class Card {
             else number=1;
         }
 };
+
+
+/*
+class Deck{
+    private: Card cards[52];
+    public:
+            Deck();
+            void getCard();
+};
+Deck::Deck(){
+    for(int i=1;i<=13;i++){
+        for(int j=0;j<4;j++){
+            cards[j*i+j].setNumber(i);
+            cout<<cards[j*i+j].getNumber()<<"\n";
+        }
+    }
+}*/
