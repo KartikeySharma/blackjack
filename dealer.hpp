@@ -27,11 +27,12 @@ class Dealer {
             index++;
 
             if(checkSum() == 2) {
-                cout<<"\n Dealer lost (Sum: "<<getSum()<<")\n";
+                cout<<"\n Dealer busted (Sum: "<<getSum()<<")\n";
                 return 0;
             }
             else if(checkSum() == 3){
                 cout<<"Blackjack!";
+                return 0;
             }
             return 1;
         }

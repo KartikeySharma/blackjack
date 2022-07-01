@@ -12,7 +12,7 @@ class Player {
     public:
         Player(char pname[100]): cards(5) {
             strcpy(name,pname);
-            index = sum = win = 0;
+            index = sum = win = bet = 0;
             cash = 5000;
         }
 
@@ -33,10 +33,10 @@ class Player {
             index++;
 
             if(checkSum() == 2){
-                cout<<"\nYou lost!";
+                cout<<"\nYou got busted!";
                 return 0;
             } 
-            if(checkSum() == 3){
+            else if(checkSum() == 3){
                 cout<<"\nBlackjack!";
             }
             return 1;
